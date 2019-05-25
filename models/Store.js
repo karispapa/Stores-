@@ -53,7 +53,7 @@ storeSchema.pre('save', async function(next){
     next();
     // Come late make the section more resilient and unique
 });
-
+// create aggregate function
 storeSchema.statics.getTagsList = function() {
     return this.aggregate([
         {$unwind: {tags: "Licenced"}}
